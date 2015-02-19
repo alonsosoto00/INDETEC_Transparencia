@@ -1,0 +1,27 @@
+<div class="box box-solid">
+
+    <div class="box-header">
+        <h3 class="box-title">Transparencia <small></small></h3>
+        <!-- tools box -->
+        <div class="pull-right box-tools">
+            <button type="button" class="btn btn-primary btn-sm" ng-click="collapseAll()">Colapsar</button>
+            <button type="button" class="btn btn-primary btn-sm" ng-click="expandAll()">Expandir</button>
+            <button type="button" class="btn btn-primary btn-sm" ng-click="llenaArbol()">Recargar</button>
+        </div>
+        <!-- /. tools -->
+    </div>
+
+    <div class="box-body">
+        <div ui-tree id="tree-root" style="padding-right: 10px;">
+            <ol ui-tree-nodes ng-model="data">
+                <li ng-repeat="node in data" ui-tree-node ng-include="'partials/nodes_renderer.html'"></li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <button type="button" ng-click="newItem()" class="btn btn-block btn-primary">Agregar un nodo</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,41 @@
+body {
+    min-height: 660px;
+}
+
+.div {
+    /*    height: 150px;*/
+
+    margin: 0 auto;
+    /* width: 800px; */
+}
+
+.td {
+    background-image: url("~/Images/Transparencia.jpg");
+}
+
+.drop-box {
+    min-height: 100px;
+    background-color: #EEE;
+    border: dashed 2px #DDD;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#files {
+    overflow: auto;
+    height: 175px;
+}
+
+#files div {
+    background-color: #ECECEC;
+    margin: 6px 0px;
+    padding: 6px;
+    border: solid 1px #DDD;
+}
+
+#files div.end {
+    background-color: #D8EDD1;
+    margin: 6px 0px;
+    padding: 6px;
+    border: solid 1px #BEDDC2;
+}

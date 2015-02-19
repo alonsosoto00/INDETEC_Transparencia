@@ -1,0 +1,29 @@
+<div ng-keypress="fnMuestraLabelF2($event, this)" tabindex="0">
+    <table ui-tree-handle class="tree-node tree-node-content" onmouseover="showActions(this)" onmouseout="hideActions(this)">
+        <tr>
+            <td width="5%" bgcolor="#ffffff" ng-show="node.id != 'newnode'">
+                <span class="fa fa-bars"></span>
+            </td>
+            <td width="5%" nodrag>
+                <a class="btn  btn-xs" ng-if="node.nodes && node.nodes.length > 0" nodrag ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}"></span> </a>
+            </td>
+            <td id="{{node.id}}" width="80%" nodrag ng-click="showData(node.id)" ng-dblclick="fnMuestraInput(this)">
+                <!-- <label id=lblNodo {{fnGetIndexNode(node.id)}}>{{node.title}}</label> -->
+                <span id=lblNodo{{fnGetIndexNode(node.id)}}>{{node.title}}</span>
+                <input id=txtNodo{{fnGetIndexNode(node.id)}} ng-blur="fnOnBlurTxtNodo(this)" style="display : none " />
+            </td>
+            <td width="5%" nodrag style="visibility: hidden;">
+                <a ng-disabled="editing" class="pull-right btn btn-primary btn-xs" nodrag ng-click="newSubItem(this)" style="margin-right: 8px;">
+                    <span class="glyphicon glyphicon-plus"> </span>
+                </a>
+            </td>
+            <td width="5%" nodrag style="visibility: hidden;">
+                <a class="pull-right btn btn-danger btn-xs"  nodrag ng-click="removeThisNode(this)"><span class="glyphicon glyphicon-remove"></span > </a>
+            </td>
+        </tr>
+    </table>
+</div>
+<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'partials/nodes_renderer.html'">
+    </li>
+</ol>

@@ -1,0 +1,16 @@
+<div class="box box-solid">
+    <div class="box-header">
+        <h3 class="box-title">Configuración</h3>
+    </div>
+    <div class="box-body">
+        Descripción:
+        <textarea ng-model="selected.textoNodo.CT_Texto" ng-focus="(tmp == selected.textoNodo)" ng-blur="updateTextoNodo(tmp == selected.textoNodo)" class="form-control"></textarea>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="selected.textoNodo.CT_Aplica" ng-change="updateAplicaNodo()"  value=""> Aplica
+            </label>
+        </div>
+        Prefijo
+        <input type="text" ng-model="selected.textoNodo.MR_Prefijo" ng-focus="(tmp == selected.textoNodo)" ng-blur="updatePrefijoNodo(tmp == selected.textoNodo)" class="form-control" placeholder="Ingrese un prefijo">
+    </div>
+</div>

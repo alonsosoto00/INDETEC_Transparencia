@@ -1,0 +1,47 @@
+<div class="row" id="divdatos">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group">
+            <label for="fechainicio">Descripción: (*)</label>
+            <input type="text" class="form-control" ng-model="nuevo.descripcion" placeholder="Ingrese el nombre de carga (A EDITAR)" />
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="form-group">
+            <label for="fechainicio">Fecha de inicio: (opcional)</label>
+            <input type="date" class="form-control" id="fechainicio" ng-model="nuevo.fecha_inicio" placeholder="AAAA-MM-DD">
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="form-group">
+            <label for="fechafin">Fecha de fin: (*)</label>
+            <input type="date" class="form-control" id="fechainicio" ng-model="nuevo.fecha_fin" placeholder="AAAA-MM-DD">
+        </div>
+    </div>
+</div>
+<div id="divupload" class="row" style="display:none">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div>
+            <!--watching model:
+            <div class="button" ng-file-select ng-model="files">Upload ussing model $watch</div>-->
+            Seleccione los archivos a cargar:
+            <input class="form-control" type="file" multiple="true" ng-file-select ng-file-change="upload($files)" />
+            <!--<div class="button" ng-file-select ng-file-change="upload($files)">Upload on file change</div>-->
+            Tambien puede arrastrar archivos aquí abajo:
+            <div ng-file-drop ng-model="files" class="drop-box" drag-over-class="dragover" ng-file-change="upload($files)" ng-multiple="true" allow-dir="true">Arrastre archivos a esta zona para cargar</div>
+            <!--accept=".jpg,.png,.pdf"-->
+            <div class="drager" ng-no-file-drop>Arrastre archivos a esta zona para cargar</div>
+            <div id="files">
+                <div ng-repeat="file in nuevo.files" ng-class="{'end':file.status=='Cargado'}">{{file.name}} {{file.status}}</div>
+            </div>
+            
+            <!--<div ng-controller="MyCtrl">
+            watching model:
+            <div class="button" ng-file-select ng-model="files">Upload ussing model $watch</div>
+            <div class="button" ng-file-select ng-file-change="upload($files)">Upload on file change</div>
+            Drop File:
+            <div ng-file-drop ng-model="files" class="drop-box" drag-over-class="dragover" ng-multiple="true" allow-dir="true" accept=".jpg,.png,.pdf">Drop Images or PDFs files here</div>
+            <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+        </div>-->
+        </div>
+    </div>
+</div>

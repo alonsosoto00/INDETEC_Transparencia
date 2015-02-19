@@ -1,0 +1,7 @@
+
+-Función para mostrar los archivos. Segundo parámetro falso
+fn_GetListadoArchivosNodo(string nodoId, bool mostrarFiltrados)
+
+
+//para combo
+fn_GetControlMaestroTiposRangos

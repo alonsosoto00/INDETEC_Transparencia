@@ -1,0 +1,64 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="treeApp" xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <link href="Styles/Styles.css" rel="stylesheet" />
+        <link href="Styles/AdminLTE.css" rel="stylesheet" type="text/css" />
+        <title></title>
+        <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+    </head>
+    <!--onkeypress="return disableKeyPress(event)"-->
+    <body class="skin-blue">
+        <!--<form id="form1" runat="server"> -->
+        <header class="header">
+            <a href="" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+
+                <img src="Images/logo.png" />
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                    <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <span><label id="lblUser" runat="server"></label><i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header bg-gray">
+                                    <br/>
+                                    <p>
+                                        <div class="center">
+                                            <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-off"></i> Cerrar Sesión</a>
+                                        </div>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+            <div class="div">
+                <asp:ContentPlaceHolder id="Contenedor" runat="server"></asp:ContentPlaceHolder>
+            </div>
+       <!-- </form> -->
+        <script type="text/javascript">
+            function disableEnterKey(e) {
+                var key;
+                if (window.event)
+                    key = window.event.keyCode; //IE
+                else
+                    key = e.which; //firefox
+                return (key != 13);
+            }
+        </script>
+    </body>
+</html>
